@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const navigate = useNavigate();
+  
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -12,6 +15,9 @@ const Contact = () => {
     ${name}
     ${email}
     ${phone}`);
+
+    navigate('/');
+  
   };
 
   return (
